@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+  <div class="conteiner">
+
+    <div class="upload-conteiner">
+
+      <input class = 'button' type="file" #fileImportInput name="File Upload" id="fileUpload" (change)="fileUploadListener($event)"
+        accept=".csv" />
+
+    </div>
+
+
+    <div class="csv-table">
+
+      <table>
+
+        <thead>
+          <tr>
+            <th>Employee ID</th>
+            <th>Project ID</th>
+            <th>Date From</th>
+            <th>Date To</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let data of resultUpload; let i = index;">
+            <td>
+              <span>{{data.EmpID}}</span>
+            </td>
+            <td>
+              <span>{{data.ProjectID}}</span>
+            </td>
+            <td>
+              <span>{{data.DateFrom}}</span>
+            </td>
+            <td>
+              <span>{{data.DateTo}}</span>
+            </td>
+          </tr>
+        </tbody>
+
+
+        <thead>
+          <tr>
+            <th>Employee 1</th>
+            <th>Employee 2</th>
+            <th>ID Project</th>
+            <th>Days work</th>
+          </tr>
+        </thead>
+
+        <tbody *ngIf="findEmployeeTable; else nomatch">
+          <tr *ngFor="let data of findEmployeeTable; let i = index;">
+            <td>
+              <span>{{data.EmpID1}}</span>
+            </td>
+            <td>
+              <span>{{data.EmpID2}}</span>
+            </td>
+            <td>
+              <span>{{data.ProjectID}}</span>
+            </td>
+            <td>
+              <span>{{data.equalDays}}</span>
+            </td>
+          </tr>
+        </tbody>
+        <ng-template #nomatch>No match</ng-template>
+
+      </table>
+
+    </div>
+
+  </div>
+
+
+</body>

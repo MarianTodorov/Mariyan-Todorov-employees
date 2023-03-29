@@ -1,0 +1,44 @@
+body{
+    margin: -10px -8px -15px -20px;
+    height: 100vh;
+    background-image: url('https://images.wallpaperscraft.com/image/single/clock_alarm_clock_laptop_825565_1280x720.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.conteiner{
+    display: flex;
+    justify-content: space-around;
+}
+.upload-conteiner{
+    margin-top: 25%;
+}
+.csv-table{
+    margin-top: 15%;
+    margin-left: 15%;
+}
+.csv-table{
+    border-collapse: collapse;
+    font-size      : 0.9em;
+    border-radius  : 5px 5px 0 0;
+    overflow       : hidden;
+}
+.csv-table thead tr {
+    background-color: #619e9e;
+    color           : #ffffff;
+    text-align      : left;
+    font-weight     : bold;
+}
+.csv-table th,
+.csv-table td {
+    padding: 12px 15px;
+}
+
+.csv-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.csv-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
