@@ -3,6 +3,7 @@ import { ViewChild } from '@angular/core';
 import { NgxCsvParser } from 'ngx-csv-parser';
 import { NgxCSVParserError } from 'ngx-csv-parser';
 import {findTeams} from './findTeams'
+import * as moment from 'moment';
 
 @Component({
     selector: 'app-root',
@@ -28,9 +29,16 @@ export class AppComponent {
             .pipe()
             .subscribe(
                 (result: Array<any>) => {
+                    
                     this.resultUpload = result;
+                result.forEach(el => {
+                    if(el.DateTo === 'null'){
+                        el.DateTo = moment().format('Y-MM-DD')
+                    }
+                })
                     
                     this.findEmployeeTable = findTeams(result);
+                    console.log(result)
                 },
                 (error: NgxCSVParserError) => {
                     console.log('Error', error);
